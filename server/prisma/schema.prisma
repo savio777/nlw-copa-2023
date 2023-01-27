@@ -1,0 +1,22 @@
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator erd {
+  provider = "prisma-erd-generator"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Pool {
+  // id String @id @default(cuid())
+  id        String   @id @default(uuid())
+  title     String
+  code      String   @unique
+  createdAt DateTime @default(now())
+}
