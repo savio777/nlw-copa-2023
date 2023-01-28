@@ -2,9 +2,6 @@ import Fastify from "fastify";
 import cors from "@fastify/cors";
 import { PrismaClient } from "@prisma/client";
 
-// https://app.rocketseat.com.br/plus/lesson/iniciando-o-projeto-de-ponta-a-ponta-or-trilha-ignite-nlw-copa
-// 00:35
-
 const prisma = new PrismaClient({
   log: ["query", "error"],
 });
